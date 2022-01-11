@@ -65,6 +65,29 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        try {
+            fis= openFileInput("test.txt");
+            isr = new InputStreamReader(fis);
+            br = new BufferedReader(isr);
+            sb = new StringBuffer();
+            String line = br.readLine();
+            while (line != null) {
+                sb.append(line+'\n');
+                line = br.readLine();
+            }
+            saved =sb.toString();
+            tv.setText(saved);
+            br.close();
+
+
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
 
     }
