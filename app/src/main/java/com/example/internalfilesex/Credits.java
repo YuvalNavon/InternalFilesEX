@@ -42,7 +42,7 @@ public class Credits extends AppCompatActivity {
 
     /**
      * The function decides which option the user chose, and acts accordingly.
-     * If they chose the Menu option, the function will go back to the first/main activity.
+     * If they chose the Menu option, the Credits activity will close.
      * Else, nothing happens.
      *
      *
@@ -54,8 +54,7 @@ public class Credits extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.Main)
         {
-            Intent si = new Intent(this, MainActivity.class);
-            startActivity(si);
+           finish();
         }
         return true;
 
